@@ -20,6 +20,50 @@ Ensure you have the following installed:
 - **XAMPP** / **WAMP** (for PHP & MySQL)
 - **Git** (for version control)
 
+### Database Setup (Importing the SQL File)
+Follow these steps to set up your database:
+
+Open phpMyAdmin
+
+Visit: http://localhost/phpmyadmin
+Create a New Database
+
+Click on Databases in the top menu.
+Enter a name for your database (e.g., form_validation_db).
+Click Create.
+Import the Database
+
+Select your newly created database.
+Click the Import tab.
+Click Choose File and select database/test_db.sql from your project.
+Click Go to import the tables.
+Configure Database in CodeIgniter
+Open application/config/database.php and update the database settings:
+
+php
+Copy
+Edit
+$db['default'] = array(
+    'dsn'    => '',
+    'hostname' => 'localhost',
+    'username' => 'root',  // Change if needed
+    'password' => '',      // Change if needed
+    'database' => 'form_validation_db',
+    'dbdriver' => 'mysqli',
+    'dbprefix' => '',
+    'pconnect' => FALSE,
+    'db_debug' => (ENVIRONMENT !== 'production'),
+    'cache_on' => FALSE,
+    'char_set' => 'utf8',
+    'dbcollat' => 'utf8_general_ci',
+);
+Verify the Database Connection
+
+Start XAMPP/WAMP and make sure Apache and MySQL are running.
+Open http://localhost/From-validation- in your browser.
+Your project should now be connected to the database.
+
+
 ### 🔹 Steps to Run the Project
 ```bash
 # Clone the repository
